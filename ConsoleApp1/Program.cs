@@ -60,5 +60,38 @@ else
 {
     Console.WriteLine("En apellidos no existe la palabra \"a\"");
 }
+Console.BackgroundColor = ConsoleColor.Green;
 Console.WriteLine("Insertando UPN al inicio de nombre: " + nombres.Insert(0, "UPN"));
+Console.ResetColor();
 Console.WriteLine("Insertando UPN al inicio de apellidos: " + apellidos.Insert(apellidos.Length, "sistemas"));
+if (apellidos.Length > 4)
+{
+    Console.WriteLine(apellidos.Remove(5));
+}
+else
+{
+    Console.WriteLine("No tiene mas de 5 caracteres en apellido");
+}
+if (nombres.Contains("a"))
+{
+    Console.WriteLine("Remplazamos a por @: "+nombres.Replace("a","@"));
+}
+else
+{
+    Console.WriteLine("No se puede remplazar porque no existe.");
+}
+char[]nom=nombres.ToCharArray();
+foreach (char c in nom)  
+{ 
+    Console.WriteLine(c);
+}
+foreach (char d in nombres)
+{
+    Array.Reverse(nom);
+    Console.WriteLine(nom);
+}
+foreach (char e in nombres)
+{
+    Array.Sort(nom);
+    Console.WriteLine(nom);
+}
